@@ -4,12 +4,17 @@ import Button from 'components/atoms/button/Button';
 import { Wrapper } from './UsersListItem.styles'
 import Average from 'components/atoms/average/Average'
 import NameAtt from 'components/atoms/NameAtt/NameAtt'
-const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => {
+
+const showIndex = (index) => alert(`Click n #${index+1}`);
+
+const UsersListItem = ({index, userData: { average, name, attendance = '0%' } }) => {
+     
+
   return (
     <Wrapper>
       <Average value={average}/>
         <NameAtt name={name} att={attendance}/>
-      <Button />
+      <Button onClick={() => showIndex(index)}/>
     </Wrapper>
   );
 };
